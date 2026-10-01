@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    container_name: OlimpBdPostgres17
+
+    environment:
+      POSTGRES_DB: "olimpbd"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "cy2gc398vbhuwcsm"
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - ./backup.sql:/docker-entrypoint-initdb.d/backup.sql:ro
