@@ -14,3 +14,4 @@ services:
 
     volumes:
       - ./backup.sql:/docker-entrypoint-initdb.d/backup.sql:ro
+      
